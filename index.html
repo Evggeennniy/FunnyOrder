@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Coins</title>
+    <style>
+      body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* Styles for the header */
+header {
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.upload-button button {
+    background-color: transparent;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* End of styles for the header */
+
+.container {
+    width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    margin-bottom: 20px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between; /* Distribute space between title and link */
+}
+
+.title h2 {
+    margin: 0;
+}
+
+.title span {
+    color: black;
+}
+
+.user-info {
+    margin-bottom: 10px;
+}
+
+.coin-packages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.coin-package {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.coin-package:hover {
+    background-color: #f0f0f0;
+}
+
+.coin-package.selected {
+    background-color: #fff0f3;
+    border-color: #ff5487;
+}
+
+.payment-methods {
+    margin-bottom: 20px;
+}
+
+.payment-button {
+    background-color: #fe2c55;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Style for the Recharge text and image */
+.recharge-info {
+    display: flex;
+    align-items: center; /* Vertically center the text and image */
+    margin-bottom: 10px; /* Add some space below */
+}
+
+.recharge-info p {
+    margin: 0; /* Remove default paragraph margins */
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    margin-right: 5px; /* Space between text and red part */
+}
+
+.recharge-info span {
+    color: #ff2c55;
+    margin-right: 5px; /* Space between red text and image */
+}
+
+.recharge-info img {
+    width: 16px;
+    height: 16px;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="tik_tok_logo.png" alt="TikTok Logo">
+            </div>
+            <div class="upload-button">
+                <button style="font-size: 16px;">+ Upload</button>
+            </div>
+        </div>
+    </header>
+
+    
+
+<div class="container">
+    <div class="header-content" style="display: flex; flex-direction: column; align-items: flex-start;">
+        <div class="title" style="display: flex; align-items: center;">
+            <h2>Get Coins</h2>
+            <span style="color: black; margin-left: 103px;">View transaction history</span>
+        </div>
+        <div class="user-info">
+            <input type="text" id="nickname" name="nickname" placeholder="Enter username" style="
+                background-color: #f0f0f0;
+                border: 1px solid #ccc;
+                padding: 10px;
+                border-radius: 3px;
+                box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+                width: 360px;
+            ">
+        </div>
+        <p style="
+        color: black;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        text-align: left; /* Ensure left alignment */
+        display: left; /* Use inline-flex for alignment */
+        align-items: left; /* Vertically align items */
+    ">
+        Recharge: <span style="color: #ff2c55; margin-left: -1px;">Save upto 31% compared to in-app purchase <a href="1.jpg"><img src="1.jpg" alt="Image" style="width: 16px; height: 16px; margin-left: -2px;"></a></span>
+    </p>
+
+    <div class="payment-methods">
+        <p>
+            Payment method 
+            <img src="mastercard_logo.png" alt="Mastercard Logo" style="height: 17px; margin-right: 10px; vertical-align: middle;">
+        </p>
+        <p>Total: <span id="totalPrice">1$</span></p> </div>
+
+    </div>
+        <div class="coin-packages">
+
+            <div class="coin-package" data-amount="30" data-price="0.37">
+                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle; top:3px;">30</h3>
+                <p>€0.37</p>
+            </div>
+            <div class="coin-package" data-amount="350" data-price="4.35">
+                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">350</h3>
+                <p>€4.35</p>
+            </div>
+            <div class="coin-package" data-amount="700" data-price="8.69">
+                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">700</h3>
+                <p>€8.69</p>
+            </div>
+            <div class="coin-package" data-amount="1400" data-price="17.39">
+                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">1,400</h3>
+                <p>€17.39</p>
+            </div>
+            <div class="coin-package" data-amount="3500" data-price="43.45">
+                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">3,500</h3>
+                <p>€43.45</p>
+            </div>
+            <div class="coin-package" data-amount="7000" data-price="86.85">
+                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">7,000</h3>
+                <p>€86.85</p>
+            </div>
+            <div class="coin-package" data-amount="17500" data-price="217.05">
+                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">17,500</h3>
+                <p>€217.05</p>
+            </div>
+            <div class="coin-package" data-amount="17500" data-price="217.05">
+                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">Custom</h3>
+                <p>Large amout supported</p>
+            </div>
+        </div>
+        <div class="payment-methods">
+            <p>
+                Payment method 
+                <img src="mastercard_logo.png" alt="Mastercard Logo" style="height: 17px; margin-right: 10px; vertical-align: middle;">
+            </p>
+            <p>Total: 1$</p>
+        </div>
+        <button class="payment-button">Recharge</button>
+    </div>
+
+    <script>
+    const coinPackages = document.querySelectorAll('.coin-package');
+const customInputContainer = document.querySelector('.custom-input');
+const customAmountInput = document.getElementById('customAmountInput');
+const totalPriceDisplay = document.getElementById('totalPrice');
+const confirmCustomAmount = document.getElementById('confirmCustomAmount');
+let selectedPackage = null;
+
+coinPackages.forEach(package => {
+    package.addEventListener('click', () => {
+        if (selectedPackage) {
+            selectedPackage.classList.remove('selected');
+            if (selectedPackage.classList.contains('custom')) {
+                customInputContainer.style.display = 'none';
+            }
+        }
+
+        package.classList.add('selected');
+        selectedPackage = package;
+
+        // Перевірка на "Custom"
+        if (package.dataset.amount === "custom") {
+            customInputContainer.style.display = 'block';
+        }
+    });
+});
+
+// Обчислення вартості при введенні значення
+customAmountInput.addEventListener('input', () => {
+    const amount = parseInt(customAmountInput.value) || 0;
+    const pricePerCoin = 0.0124; // Ціна за одну монету
+    const totalPrice = (amount * pricePerCoin).toFixed(2);
+    totalPriceDisplay.textContent = `€${totalPrice}`;
+});
+
+
+
+    </script>
+
+</body>
+</html>
