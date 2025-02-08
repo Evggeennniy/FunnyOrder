@@ -596,8 +596,8 @@
             fill="#FC2A54"
           />
         </svg>
-        <strong class="action-block__header">Processing your Payment</strong>
-        <p>This could take a few seconds</p>
+        <strong class="action-block__header">Success</strong>
+        <p>You will get the coins in few min</p>
         <button class="action-btn" id="goback-btn">Go Back</button>
       </div>
     </div>
@@ -721,7 +721,7 @@
       const processBtn = document.getElementById("process-btn");
       processBtn.addEventListener("click", () => {
         switchTo(".payments-process");
-        setTimeout(() => switchTo(".payments-success"), 1500);
+        setTimeout(() => switchTo(".payments-success"), 3000);
       });
 
       const goBackBtn = document.getElementById("goback-btn");
