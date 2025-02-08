@@ -1,283 +1,802 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buy Coins</title>
     <style>
       body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: #f0f0f0;
-}
+        font-family: sans-serif;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
 
-/* Styles for the header */
-header {
-    background-color: #fff;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
+      body.no-scroll {
+        overflow: hidden;
+      }
 
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    margin: 0 auto;
-}
+      /* Styles for the header */
+      header {
+        background-color: #fff;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
 
-.logo img {
-    height: 40px;
-}
+      .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+      }
 
-.upload-button button {
-    background-color: transparent;
-    color: black;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-/* End of styles for the header */
+      .logo img {
+        height: 40px;
+      }
 
-.container {
-    width: 400px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    margin-bottom: 20px;
-}
-
-.title {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between; /* Distribute space between title and link */
-}
-
-.title h2 {
-    margin: 0;
-}
-
-.title span {
-    color: black;
-}
-
-.user-info {
-    margin-bottom: 10px;
-}
-
-.coin-packages {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    margin-bottom: 20px;
-}
-
-.coin-package {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.coin-package:hover {
-    background-color: #f0f0f0;
-}
-
-.coin-package.selected {
-    background-color: #fff0f3;
-    border-color: #ff5487;
-}
-
-.payment-methods {
-    margin-bottom: 20px;
-}
-
-.payment-button {
-    background-color: #fe2c55;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* Style for the Recharge text and image */
-.recharge-info {
-    display: flex;
-    align-items: center; /* Vertically center the text and image */
-    margin-bottom: 10px; /* Add some space below */
-}
-
-.recharge-info p {
-    margin: 0; /* Remove default paragraph margins */
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: black;
-    margin-right: 5px; /* Space between text and red part */
-}
-
-.recharge-info span {
-    color: #ff2c55;
-    margin-right: 5px; /* Space between red text and image */
-}
-
-.recharge-info img {
-    width: 16px;
-    height: 16px;
-}
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="tik_tok_logo.png" alt="TikTok Logo">
-            </div>
-            <div class="upload-button">
-                <button style="font-size: 16px;">+ Upload</button>
-            </div>
-        </div>
-    </header>
-
-    
-
-<div class="container">
-    <div class="header-content" style="display: flex; flex-direction: column; align-items: flex-start;">
-        <div class="title" style="display: flex; align-items: center;">
-            <h2>Get Coins</h2>
-            <span style="color: black; margin-left: 103px;">View transaction history</span>
-        </div>
-        <div class="user-info">
-            <input type="text" id="nickname" name="nickname" placeholder="Enter username" style="
-                background-color: #f0f0f0;
-                border: 1px solid #ccc;
-                padding: 10px;
-                border-radius: 3px;
-                box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-                width: 360px;
-            ">
-        </div>
-        <p style="
+      .upload-button button {
+        background-color: transparent;
         color: black;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      /* End of styles for the header */
+
+      .container {
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left */
+        margin-bottom: 20px;
+      }
+
+      .title {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between; /* Distribute space between title and link */
+      }
+
+      .title h2 {
+        margin: 0;
+      }
+
+      .title span {
+        color: black;
+      }
+
+      .user-info {
+        margin-bottom: 10px;
+      }
+
+      .coin-packages {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .coin-package {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .coin-package:hover {
+        background-color: #f0f0f0;
+      }
+
+      .coin-package.active {
+        background-color: #fff0f3;
+        border-color: #ff5487;
+      }
+
+      .payment-methods {
+        margin-bottom: 20px;
+      }
+
+      .payment-button {
+        background-color: #fe2c55;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      /* Style for the Recharge text and image */
+      .recharge-info {
+        display: flex;
+        align-items: center; /* Vertically center the text and image */
+        margin-bottom: 10px; /* Add some space below */
+      }
+
+      .recharge-info p {
+        margin: 0; /* Remove default paragraph margins */
         font-size: 13px;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 1px;
-        margin-top: 10px;
-        text-align: left; /* Ensure left alignment */
-        display: left; /* Use inline-flex for alignment */
-        align-items: left; /* Vertically align items */
-    ">
-        Recharge: <span style="color: #ff2c55; margin-left: -1px;">Save upto 31% compared to in-app purchase <a href="1.jpg"><img src="1.jpg" alt="Image" style="width: 16px; height: 16px; margin-left: -2px;"></a></span>
-    </p>
+        color: black;
+        margin-right: 5px; /* Space between text and red part */
+      }
 
-    <div class="payment-methods">
-        <p>
-            Payment method 
-            <img src="mastercard_logo.png" alt="Mastercard Logo" style="height: 17px; margin-right: 10px; vertical-align: middle;">
+      .recharge-info span {
+        color: #ff2c55;
+        margin-right: 5px; /* Space between red text and image */
+      }
+
+      .recharge-info img {
+        width: 16px;
+        height: 16px;
+      }
+
+      #username-input {
+        width: calc(100vw - 60px);
+      }
+
+      .overlay.active {
+        background-color: rgb(0, 0, 0, 0.5);
+        position: absolute;
+        inset: 0;
+        bottom: -500px;
+        z-index: 9;
+      }
+
+      .close-action-btn {
+        background-color: transparent;
+        border: none;
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+
+      .action-block {
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        position: absolute;
+        top: -150vh;
+        left: 20px;
+        right: 20px;
+        z-index: 10;
+        transition: top 400ms ease-in-out;
+      }
+
+      .action.active .action-block {
+        top: 10vh;
+      }
+
+      .action-block__header {
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .action-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .coin-icon {
+        height: 36px;
+      }
+
+      .input-wrapper {
+        display: flex;
+        padding: 10px;
+        gap: 10px;
+        border-radius: 5px;
+        border: 2px solid #ededed;
+        margin-bottom: 20px;
+      }
+
+      .input-wrapper input {
+        border: 0;
+      }
+
+      .input-wrapper input:focus {
+        outline: none;
+        border: 0;
+      }
+
+      .checked-item {
+        padding: 2px;
+
+        border: 1px solid #97566c;
+        border-radius: 100px;
+      }
+
+      .visa-action {
+        height: 16px;
+      }
+
+      .action-btn {
+        margin-top: 40px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        background: #fc2a54;
+        color: white;
+        font-weight: 600;
+      }
+
+      .payments {
+        visibility: hidden;
+        inset: 0;
+        transition: visibility 400ms ease-in-out;
+      }
+
+      .payments.active {
+        visibility: visible;
+      }
+
+      .payments-process {
+        visibility: hidden;
+        inset: 0;
+        transition: visibility 400ms ease-in-out;
+      }
+
+      .payments-success {
+        visibility: hidden;
+        inset: 0;
+        transition: visibility 400ms ease-in-out;
+      }
+
+      .payments-success.active {
+        visibility: visible;
+      }
+
+      .payments-custom {
+        visibility: hidden;
+        inset: 0;
+        transition: visibility 400ms ease-in-out;
+      }
+
+      .payments-custom.active {
+        visibility: visible;
+      }
+
+      .payments-process .action-block,
+      .payments-success .action-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .payments-process.active {
+        visibility: visible;
+      }
+
+      .action-img {
+        height: 50px;
+        width: 50px;
+        padding: 10px;
+        border-radius: 35px;
+        background: lightgray;
+        margin-bottom: 30px;
+      }
+
+      .num-table {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .table-item {
+        border-radius: 3px;
+        background: #ededed;
+        padding: 20px 0;
+        font-weight: 600;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="tik_tok_logo.png" alt="TikTok Logo" />
+        </div>
+        <div class="upload-button">
+          <button style="font-size: 16px">+ Upload</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div
+        class="header-content"
+        style="display: flex; flex-direction: column; align-items: flex-start"
+      >
+        <div class="title" style="display: flex; align-items: center">
+          <h2>Get Coins</h2>
+          <span style="color: black; margin-left: 103px"
+            >View transaction history</span
+          >
+        </div>
+        <div class="user-info">
+          <input
+            type="text"
+            id="username-input"
+            name="nickname"
+            placeholder="Enter username"
+            style="
+              background-color: #f0f0f0;
+              border: 1px solid #ccc;
+              padding: 10px;
+              border-radius: 3px;
+              box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            "
+          />
+        </div>
+        <p
+          style="
+            color: black;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            text-align: left; /* Ensure left alignment */
+            display: left; /* Use inline-flex for alignment */
+            align-items: left; /* Vertically align items */
+          "
+        >
+          Recharge:
+          <span style="color: #ff2c55; margin-left: -1px"
+            >Save upto 31% compared to in-app purchase
+            <a href="1.jpg"
+              ><img
+                src="1.jpg"
+                alt="Image"
+                style="width: 16px; height: 16px; margin-left: -2px" /></a
+          ></span>
         </p>
-        <p>Total: <span id="totalPrice">1$</span></p> </div>
 
-    </div>
-        <div class="coin-packages">
-
-            <div class="coin-package" data-amount="30" data-price="0.37">
-                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle; top:3px;">30</h3>
-                <p>€0.37</p>
-            </div>
-            <div class="coin-package" data-amount="350" data-price="4.35">
-                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">350</h3>
-                <p>€4.35</p>
-            </div>
-            <div class="coin-package" data-amount="700" data-price="8.69">
-                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">700</h3>
-                <p>€8.69</p>
-            </div>
-            <div class="coin-package" data-amount="1400" data-price="17.39">
-                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">1,400</h3>
-                <p>€17.39</p>
-            </div>
-            <div class="coin-package" data-amount="3500" data-price="43.45">
-                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">3,500</h3>
-                <p>€43.45</p>
-            </div>
-            <div class="coin-package" data-amount="7000" data-price="86.85">
-                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">7,000</h3>
-                <p>€86.85</p>
-            </div>
-            <div class="coin-package" data-amount="17500" data-price="217.05">
-                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">17,500</h3>
-                <p>€217.05</p>
-            </div>
-            <div class="coin-package" data-amount="17500" data-price="217.05">
-                <h3><img src="12.PNG" alt="Coin Icon" style="height: 36px; margin-right: 5px; vertical-align: middle;">Custom</h3>
-                <p>Large amout supported</p>
-            </div>
-        </div>
         <div class="payment-methods">
-            <p>
-                Payment method 
-                <img src="mastercard_logo.png" alt="Mastercard Logo" style="height: 17px; margin-right: 10px; vertical-align: middle;">
-            </p>
-            <p>Total: 1$</p>
+          <p>
+            Payment method
+            <img
+              src="mastercard_logo.png"
+              alt="Mastercard Logo"
+              style="height: 17px; margin-right: 10px; vertical-align: middle"
+            />
+          </p>
         </div>
-        <button class="payment-button">Recharge</button>
+      </div>
+      <div class="coin-packages" id="items-list">
+        <div class="coin-package" data-amount="30" data-price="0.37">
+          <h3>
+            <img
+              src="12.PNG"
+              alt="Coin Icon"
+              style="
+                height: 36px;
+                margin-right: 5px;
+                vertical-align: middle;
+                top: 3px;
+              "
+            />30
+          </h3>
+          <p>€0.37</p>
+        </div>
+        <div class="coin-package" data-amount="350" data-price="4.35">
+          <h3>
+            <img
+              src="12.PNG"
+              alt="Coin Icon"
+              style="height: 36px; margin-right: 5px; vertical-align: middle"
+            />350
+          </h3>
+          <p>€4.35</p>
+        </div>
+        <div class="coin-package" data-amount="700" data-price="8.69">
+          <h3>
+            <img
+              src="12.PNG"
+              alt="Coin Icon"
+              style="height: 36px; margin-right: 5px; vertical-align: middle"
+            />700
+          </h3>
+          <p>€8.69</p>
+        </div>
+        <div class="coin-package" data-amount="1400" data-price="17.39">
+          <h3>
+            <img
+              src="12.PNG"
+              alt="Coin Icon"
+              style="height: 36px; margin-right: 5px; vertical-align: middle"
+            />1,400
+          </h3>
+          <p>€17.39</p>
+        </div>
+        <div class="coin-package" data-amount="3500" data-price="43.45">
+          <h3>
+            <img
+              src="12.PNG"
+              alt="Coin Icon"
+              style="height: 36px; margin-right: 5px; vertical-align: middle"
+            />3,500
+          </h3>
+          <p>€43.45</p>
+        </div>
+        <div class="coin-package" data-amount="7000" data-price="86.85">
+          <h3>
+            <img
+              src="12.PNG"
+              alt="Coin Icon"
+              style="height: 36px; margin-right: 5px; vertical-align: middle"
+            />7,000
+          </h3>
+          <p>€86.85</p>
+        </div>
+        <div class="coin-package" data-amount="17500" data-price="217.05">
+          <h3>
+            <img
+              src="12.PNG"
+              alt="Coin Icon"
+              style="height: 36px; margin-right: 5px; vertical-align: middle"
+            />17,500
+          </h3>
+          <p>€217.05</p>
+        </div>
+        <div
+          id="action-custom"
+          class="coin-package"
+          data-amount="0"
+          data-price="217.05"
+        >
+          <h3>
+            <img
+              src="12.PNG"
+              alt="Coin Icon"
+              style="height: 36px; margin-right: 5px; vertical-align: middle"
+            />Custom
+          </h3>
+          <p>Large amout supported</p>
+        </div>
+      </div>
+      <div class="payment-methods">
+        <p>
+          Payment method
+          <img
+            src="mastercard_logo.png"
+            alt="Mastercard Logo"
+            style="height: 17px; margin-right: 10px; vertical-align: middle"
+          />
+        </p>
+      </div>
+      <button class="payment-button" id="payment-btn">Recharge</button>
     </div>
+
+    <div class="action payments">
+      <div class="action-block">
+        <strong class="action-block__header">Order Summary</strong>
+        <!-- <button class="close-action-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 25 25"
+            fill="none"
+          >
+            <path
+              d="M7.04004 17.9615L12.5015 12.5L17.963 17.9615M17.963 7.03857L12.5005 12.5L7.04004 7.03857"
+              stroke="#4E4E4E"
+              stroke-width="1.5625"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button> -->
+        <div class="action-item">
+          <span>Account</span>
+          <span id="username-bill">4324322323</span>
+        </div>
+        <div class="action-item">
+          <span id="total-coins"></span>
+          <span id="total-price">$133133133</span>
+        </div>
+        <div class="action-item">
+          <span>Select a payment</span>
+          <svg
+            class="checked-item"
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+          >
+            <circle cx="6" cy="6" r="5.5" fill="#97566C" />
+          </svg>
+        </div>
+        <div class="action-item action-item--column">
+          <span>Method</span>
+          <span
+            ><img class="visa-action" src="./visaicon.png" alt="" /> 58** ****
+            **** **12</span
+          >
+        </div>
+        <div class="action-item">
+          <span>Total</span>
+          <span id="total-balance">$456 000</span>
+        </div>
+        <button class="action-btn" id="process-btn">Recharge</button>
+      </div>
+    </div>
+
+    <div class="action payments-process">
+      <div class="action-block">
+        <svg
+          class="action-img"
+          xmlns="http://www.w3.org/2000/svg"
+          width="36"
+          height="56"
+          viewBox="0 0 36 56"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_109_513)">
+            <path
+              d="M36.0315 1.35938C36.0315 1.13145 35.9412 0.912869 35.7805 0.751705C35.6198 0.590541 35.4019 0.5 35.1746 0.5H0.824721C0.597444 0.5 0.379476 0.590541 0.218767 0.751705C0.0580587 0.912869 -0.0322266 1.13145 -0.0322266 1.35938C-0.0322266 1.5873 0.0580587 1.80588 0.218767 1.96704C0.379476 2.12821 0.597444 2.21875 0.824721 2.21875H35.1763C35.4033 2.21829 35.6208 2.12755 35.7811 1.96644C35.9415 1.80532 36.0315 1.587 36.0315 1.35938ZM34.2816 11.005V4.79688C34.2816 4.56895 34.1914 4.35037 34.0307 4.18921C33.8699 4.02804 33.652 3.9375 33.4247 3.9375H2.71515C2.48787 3.9375 2.2699 4.02804 2.10919 4.18921C1.94848 4.35037 1.8582 4.56895 1.8582 4.79688V11.005C1.8582 19.5575 8.38471 25.3566 12.1656 27.9966C7.83112 30.9906 1.71766 36.6883 1.71766 44.995V51.2031C1.71766 51.431 1.80794 51.6496 1.96865 51.8108C2.12936 51.972 2.34733 52.0625 2.57461 52.0625H33.4247C33.652 52.0625 33.8699 51.972 34.0307 51.8108C34.1914 51.6496 34.2816 51.431 34.2816 51.2031V45.0448C34.2816 36.5164 27.6609 30.6675 23.8355 28.0017C28.1699 25.0077 34.2816 19.3117 34.2816 11.005ZM17.9997 42.0766L26.2435 50.3438H9.75582L17.9997 42.0766ZM21.8251 27.2747C21.7025 27.3517 21.6015 27.4586 21.5315 27.5855C21.4615 27.7124 21.4247 27.855 21.4247 28C21.4247 28.145 21.4615 28.2876 21.5315 28.4145C21.6015 28.5414 21.7025 28.6483 21.8251 28.7253C25.0558 30.7792 32.5678 36.482 32.5678 45.0448V50.3438H28.6464C28.6309 50.3248 28.6241 50.3008 28.6069 50.2836L18.8566 40.5056V39.1719C18.8566 38.944 18.7663 38.7254 18.6056 38.5642C18.4449 38.403 18.2269 38.3125 17.9997 38.3125C17.7724 38.3125 17.5544 38.403 17.3937 38.5642C17.233 38.7254 17.1427 38.944 17.1427 39.1719V40.5056L7.39236 50.2836C7.37522 50.3008 7.36837 50.3248 7.35294 50.3438H3.43155V44.995C3.43155 36.7845 10.162 31.2777 14.1742 28.727C14.2964 28.6495 14.397 28.5423 14.4667 28.4153C14.5364 28.2884 14.5729 28.1458 14.5729 28.0009C14.5729 27.8559 14.5364 27.7133 14.4667 27.5864C14.397 27.4594 14.2964 27.3522 14.1742 27.2747C10.9864 25.2466 3.43155 19.6039 3.43155 11.005V5.65625H32.5678V11.005C32.5678 19.2172 25.8373 24.7223 21.8251 27.2747Z"
+              fill="#1E1E1E"
+            />
+            <path
+              d="M26.6394 15.9207H9.81924C9.6684 15.921 9.52031 15.9611 9.38987 16.037C9.25942 16.113 9.15123 16.222 9.07617 16.3532C9.00111 16.4844 8.96184 16.6332 8.96231 16.7844C8.96278 16.9357 9.00296 17.0841 9.07883 17.2149C11.1132 20.6885 14.0834 22.8146 17.2284 25.0678L17.5009 25.2621C17.6464 25.3665 17.8208 25.4226 17.9997 25.4226C18.1785 25.4226 18.3529 25.3665 18.4984 25.2621C18.9474 24.9412 19.3988 24.6233 19.8524 24.3082C22.6614 22.3419 25.5665 20.3103 27.3781 17.2149C27.455 17.0845 27.4961 16.9359 27.4971 16.7844C27.4982 16.6329 27.4592 16.4838 27.3842 16.3523C27.3091 16.2208 27.2007 16.1115 27.0698 16.0357C26.939 15.9599 26.7905 15.9202 26.6394 15.9207ZM18.8703 22.8971L18.0014 23.5072C15.422 21.6596 13.1425 19.9975 11.4097 17.6377H25.0232C23.4104 19.7208 21.1943 21.2711 18.8703 22.8971ZM0.82472 55.5H35.1763C35.4036 55.5 35.6215 55.4095 35.7822 55.2483C35.943 55.0872 36.0332 54.8686 36.0332 54.6407C36.0332 54.4127 35.943 54.1942 35.7822 54.033C35.6215 53.8718 35.4036 53.7813 35.1763 53.7813H0.82472C0.597444 53.7813 0.379476 53.8718 0.218767 54.033C0.0580586 54.1942 -0.0322266 54.4127 -0.0322266 54.6407C-0.0322266 54.8686 0.0580586 55.0872 0.218767 55.2483C0.379476 55.4095 0.597444 55.5 0.82472 55.5ZM17.9997 33.1563C17.7724 33.1563 17.5544 33.2468 17.3937 33.408C17.233 33.5692 17.1427 33.7877 17.1427 34.0157V35.7344C17.1427 35.9623 17.233 36.1809 17.3937 36.3421C17.5544 36.5032 17.7724 36.5938 17.9997 36.5938C18.2269 36.5938 18.4449 36.5032 18.6056 36.3421C18.7663 36.1809 18.8566 35.9623 18.8566 35.7344V34.0157C18.8566 33.7877 18.7663 33.5692 18.6056 33.408C18.4449 33.2468 18.2269 33.1563 17.9997 33.1563ZM17.9997 28C17.7724 28 17.5544 28.0906 17.3937 28.2517C17.233 28.4129 17.1427 28.6315 17.1427 28.8594V30.5782C17.1427 30.8061 17.233 31.0247 17.3937 31.1858C17.5544 31.347 17.7724 31.4375 17.9997 31.4375C18.2269 31.4375 18.4449 31.347 18.6056 31.1858C18.7663 31.0247 18.8566 30.8061 18.8566 30.5782V28.8594C18.8566 28.6315 18.7663 28.4129 18.6056 28.2517C18.4449 28.0906 18.2269 28 17.9997 28Z"
+              fill="#1E1E1E"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_109_513">
+              <rect
+                width="36"
+                height="55"
+                fill="white"
+                transform="translate(0 0.5)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+        <strong class="action-block__header">Processing your Payment</strong>
+        <p>This could take a few seconds</p>
+      </div>
+    </div>
+
+    <div class="action payments-success">
+      <div class="action-block">
+        <svg
+          class="action-img"
+          xmlns="http://www.w3.org/2000/svg"
+          width="55"
+          height="56"
+          viewBox="0 0 55 56"
+          fill="none"
+        >
+          <path
+            d="M45.1638 14.9191C45.3772 15.132 45.5465 15.3849 45.6621 15.6633C45.7776 15.9417 45.8371 16.2402 45.8371 16.5416C45.8371 16.843 45.7776 17.1415 45.6621 17.4199C45.5465 17.6983 45.3772 17.9512 45.1638 18.1641L24.5388 38.7891C24.3259 39.0025 24.073 39.1718 23.7946 39.2874C23.5162 39.4029 23.2177 39.4624 22.9163 39.4624C22.6149 39.4624 22.3164 39.4029 22.038 39.2874C21.7596 39.1718 21.5067 39.0025 21.2938 38.7891L12.1271 29.6224C11.6968 29.1921 11.4551 28.6085 11.4551 27.9999C11.4551 27.3914 11.6968 26.8078 12.1271 26.3774C12.5575 25.9471 13.1411 25.7054 13.7496 25.7054C14.3582 25.7054 14.9418 25.9471 15.3721 26.3774L22.9163 33.9262L41.9188 14.9191C42.1317 14.7057 42.3846 14.5364 42.663 14.4208C42.9414 14.3053 43.2399 14.2458 43.5413 14.2458C43.8427 14.2458 44.1412 14.3053 44.4196 14.4208C44.698 14.5364 44.9509 14.7057 45.1638 14.9191Z"
+            fill="#FC2A54"
+          />
+        </svg>
+        <strong class="action-block__header">Processing your Payment</strong>
+        <p>This could take a few seconds</p>
+        <button class="action-btn" id="goback-btn">Go Back</button>
+      </div>
+    </div>
+
+    <div class="action payments-custom">
+      <div class="action-block">
+        <div class="input-wrapper">
+          <img class="coin-icon" src="./12.PNG" alt="coin-icon" />
+          <input type="number" class="action-input" id="custom-input" />
+        </div>
+        <div class="num-table" id="custom-table">
+          <div class="table-item" data-value="1">1</div>
+          <div class="table-item" data-value="2">2</div>
+          <div class="table-item" data-value="3">3</div>
+          <div class="table-item" data-value="del">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              viewBox="0 0 26 26"
+              fill="none"
+            >
+              <path
+                d="M2.82324 12.3334L8.03158 6.08338C8.12952 5.96579 8.25216 5.87123 8.39079 5.80641C8.52942 5.7416 8.68063 5.70813 8.83366 5.70838H20.292C21.1208 5.70838 21.9156 6.03762 22.5017 6.62367C23.0878 7.20972 23.417 8.00457 23.417 8.83338V17.1667C23.417 17.9955 23.0878 18.7904 22.5017 19.3764C21.9156 19.9625 21.1208 20.2917 20.292 20.2917H8.83366C8.68063 20.292 8.52942 20.2585 8.39079 20.1937C8.25216 20.1289 8.12952 20.0343 8.03158 19.9167L2.82324 13.6667C2.66734 13.4795 2.58197 13.2436 2.58197 13C2.58197 12.7564 2.66734 12.5205 2.82324 12.3334ZM9.32324 18.2084H20.292C20.5683 18.2084 20.8332 18.0986 21.0286 17.9033C21.2239 17.7079 21.3337 17.443 21.3337 17.1667V8.83338C21.3337 8.55711 21.2239 8.29216 21.0286 8.09681C20.8332 7.90146 20.5683 7.79171 20.292 7.79171H9.32324L4.97949 13L9.32324 18.2084ZM12.2607 10.1771C12.3576 10.0795 12.4728 10.002 12.5997 9.94911C12.7267 9.89623 12.8628 9.869 13.0003 9.869C13.1378 9.869 13.274 9.89623 13.4009 9.94911C13.5279 10.002 13.6431 10.0795 13.7399 10.1771L15.0837 11.5313L16.4274 10.1771C16.6236 9.98098 16.8896 9.87078 17.167 9.87078C17.4444 9.87078 17.7104 9.98098 17.9066 10.1771C18.1027 10.3733 18.2129 10.6393 18.2129 10.9167C18.2129 11.0541 18.1859 11.1901 18.1333 11.317C18.0807 11.4439 18.0037 11.5592 17.9066 11.6563L16.5524 13L17.9066 14.3438C18.0042 14.4406 18.0817 14.5558 18.1346 14.6828C18.1875 14.8097 18.2147 14.9459 18.2147 15.0834C18.2147 15.2209 18.1875 15.357 18.1346 15.484C18.0817 15.6109 18.0042 15.7261 17.9066 15.823C17.8097 15.9206 17.6945 15.9981 17.5676 16.051C17.4407 16.1039 17.3045 16.1311 17.167 16.1311C17.0295 16.1311 16.8933 16.1039 16.7664 16.051C16.6395 15.9981 16.5242 15.9206 16.4274 15.823L15.0837 14.4688L13.7399 15.823C13.6431 15.9206 13.5279 15.9981 13.4009 16.051C13.274 16.1039 13.1378 16.1311 13.0003 16.1311C12.8628 16.1311 12.7267 16.1039 12.5997 16.051C12.4728 15.9981 12.3576 15.9206 12.2607 15.823C12.1631 15.7261 12.0856 15.6109 12.0327 15.484C11.9798 15.357 11.9526 15.2209 11.9526 15.0834C11.9526 14.9459 11.9798 14.8097 12.0327 14.6828C12.0856 14.5558 12.1631 14.4406 12.2607 14.3438L13.6149 13L12.2607 11.6563C12.1631 11.5595 12.0856 11.4442 12.0327 11.3173C11.9798 11.1904 11.9526 11.0542 11.9526 10.9167C11.9526 10.7792 11.9798 10.643 12.0327 10.5161C12.0856 10.3892 12.1631 10.274 12.2607 10.1771Z"
+                fill="#7A7A7A"
+              />
+            </svg>
+          </div>
+          <div class="table-item" data-value="4">4</div>
+          <div class="table-item" data-value="5">5</div>
+          <div class="table-item" data-value="6">6</div>
+          <div class="table-item" data-value=".">.</div>
+          <div class="table-item" data-value="7">7</div>
+          <div class="table-item" data-value="8">8</div>
+          <div class="table-item" data-value="9">9</div>
+          <div id="custom-value" class="table-item" data-value="0">0</div>
+        </div>
+        <div class="action-item">
+          <span>Account</span>
+          <strong id="custom-total">$0</strong>
+        </div>
+        <button class="action-btn" id="custom-to-pay">Recharge</button>
+      </div>
+    </div>
+
+    <div class="overlay"></div>
 
     <script>
-    const coinPackages = document.querySelectorAll('.coin-package');
-const customInputContainer = document.querySelector('.custom-input');
-const customAmountInput = document.getElementById('customAmountInput');
-const totalPriceDisplay = document.getElementById('totalPrice');
-const confirmCustomAmount = document.getElementById('confirmCustomAmount');
-let selectedPackage = null;
+      const switchTo = (blockClass) => {
+        const currentBlock = document.querySelector(".action.active");
+        const nextBlock = document.querySelector(blockClass);
+        currentBlock != null ? currentBlock.classList.remove("active") : "";
+        nextBlock.classList.add("active");
+      };
 
-coinPackages.forEach(package => {
-    package.addEventListener('click', () => {
-        if (selectedPackage) {
-            selectedPackage.classList.remove('selected');
-            if (selectedPackage.classList.contains('custom')) {
-                customInputContainer.style.display = 'none';
-            }
+      const overlay = document.querySelector(".overlay");
+      const toggleOverlay = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        overlay.classList.toggle("active");
+        document.body.classList.toggle("no-scroll");
+      };
+
+      let paymentBalance = 454000;
+      const paymentBlock = document.querySelector(".payments");
+
+      const usernameInput = document.getElementById("username-input");
+
+      const itemsList = document.getElementById("items-list");
+      const items = itemsList.querySelectorAll(".coin-package");
+      itemsList.addEventListener("click", (event) => {
+        const target = event.target;
+        const parent = target.closest(".coin-package");
+        for (let item of items) {
+          item.classList.remove("active");
         }
+        parent.classList.add("active");
+        console.log("chosen a new item");
+      });
 
-        package.classList.add('selected');
-        selectedPackage = package;
+      const cleanData = () => {
+        usernameInput.value = "";
+      };
 
-        // Перевірка на "Custom"
-        if (package.dataset.amount === "custom") {
-            customInputContainer.style.display = 'block';
+      const paymentBtn = document.getElementById("payment-btn");
+      paymentBtn.addEventListener("click", () => {
+        const soAllisOkay =
+          usernameInput.value !== "" &&
+          usernameInput.value.length > 5 &&
+          document.querySelector(".coin-package.active")
+            ? true
+            : false;
+        console.log(soAllisOkay);
+        if (soAllisOkay) {
+          const coinsCount = document
+            .querySelector(".coin-package.active")
+            .getAttribute("data-amount");
+
+          document.querySelector("#username-bill").textContent =
+            usernameInput.value;
+          document.querySelector(
+            "#total-coins"
+          ).textContent = `${coinsCount} Coins`;
+          document.querySelector("#total-price").textContent = `$${
+            coinsCount * 0.0125
+          }`;
+
+          paymentBalance = paymentBalance - coinsCount * 0.0125;
+
+          document.querySelector(
+            "#total-balance"
+          ).textContent = `$${paymentBalance}`;
+
+          toggleOverlay();
+          switchTo(".payments");
+        } else {
+          console.log("payment denied not enough data");
         }
-    });
-});
+        if (soAllisOkay == true) return;
+      });
 
-// Обчислення вартості при введенні значення
-customAmountInput.addEventListener('input', () => {
-    const amount = parseInt(customAmountInput.value) || 0;
-    const pricePerCoin = 0.0124; // Ціна за одну монету
-    const totalPrice = (amount * pricePerCoin).toFixed(2);
-    totalPriceDisplay.textContent = `€${totalPrice}`;
-});
+      const processBtn = document.getElementById("process-btn");
+      processBtn.addEventListener("click", () => {
+        switchTo(".payments-process");
+        setTimeout(() => switchTo(".payments-success"), 1500);
+      });
 
+      const goBackBtn = document.getElementById("goback-btn");
+      goBackBtn.addEventListener("click", () => {
+        cleanData();
+        toggleOverlay();
+        document.querySelector(".action.active").classList.remove("active");
+      });
 
+      const customBtn = document.getElementById("action-custom");
+      customBtn.addEventListener("click", () => {
+        const soAllisOkay =
+          usernameInput.value !== "" &&
+          usernameInput.value.length > 5 &&
+          document.querySelector(".coin-package.active")
+            ? true
+            : false;
+        if (soAllisOkay) {
+          toggleOverlay();
+          coinsCount = document
+            .querySelector(".coin-package.active")
+            .getAttribute("data-amount");
+          paymentBalance = paymentBalance - coinsCount * 0.0125;
+          switchTo(".payments-custom");
+        }
+      });
 
+      const customValue = document.getElementById("custom-value");
+      const customPrice = document.getElementById("custom-total");
+      const customInput = document.getElementById("custom-input");
+      const updatePrice = () => {
+        let result = Math.round(customInput.value * 0.0125 * 100) / 100;
+        customPrice.textContent = `$ ${result}`;
+
+        const coin = document.querySelector(".coin-package.active");
+        coin.setAttribute("data-amount", customInput.value);
+        coin.setAttribute("data-price", result);
+      };
+
+      const customTable = document.getElementById("custom-table");
+      customInput.addEventListener("input", () => {
+        updatePrice();
+      });
+
+      customTable.addEventListener("click", (event) => {
+        const value = event.target
+          .closest(".table-item")
+          .getAttribute("data-value");
+        console.log(value);
+        customInput.value = customInput.value + value;
+        updatePrice();
+      });
+
+      const customBtnRedirect = document.getElementById("custom-to-pay");
+      customBtnRedirect.addEventListener("click", () => {
+        const coinsCount = document
+          .querySelector(".coin-package.active")
+          .getAttribute("data-amount");
+
+        document.querySelector("#username-bill").textContent =
+          usernameInput.value;
+        document.querySelector(
+          "#total-coins"
+        ).textContent = `${coinsCount} Coins`;
+        document.querySelector("#total-price").textContent = `$${
+          coinsCount * 0.0125
+        }`;
+
+        switchTo(".payments");
+      });
+
+      //   let's provide some TDD first (FOR FUN ONLY)
+      console.log(usernameInput);
+      console.log(itemsList);
+      console.log(paymentBtn);
     </script>
-
-</body>
+  </body>
 </html>
