@@ -309,6 +309,14 @@
         font-weight: 600;
         text-align: center;
       }
+
+      input {
+        font-size: 16px;
+      }
+
+      video {
+        height: 100px;
+      }
     </style>
   </head>
   <body>
@@ -538,7 +546,7 @@
           >
         </div>
         <div class="action-item">
-          <span>Total</span>
+          <span>Balance</span>
           <span id="total-balance">$456 000</span>
         </div>
         <button class="action-btn" id="process-btn">Recharge</button>
@@ -547,37 +555,14 @@
 
     <div class="action payments-process">
       <div class="action-block">
-        <svg
-          class="action-img"
-          xmlns="http://www.w3.org/2000/svg"
-          width="36"
-          height="56"
-          viewBox="0 0 36 56"
-          fill="none"
-        >
-          <g clip-path="url(#clip0_109_513)">
-            <path
-              d="M36.0315 1.35938C36.0315 1.13145 35.9412 0.912869 35.7805 0.751705C35.6198 0.590541 35.4019 0.5 35.1746 0.5H0.824721C0.597444 0.5 0.379476 0.590541 0.218767 0.751705C0.0580587 0.912869 -0.0322266 1.13145 -0.0322266 1.35938C-0.0322266 1.5873 0.0580587 1.80588 0.218767 1.96704C0.379476 2.12821 0.597444 2.21875 0.824721 2.21875H35.1763C35.4033 2.21829 35.6208 2.12755 35.7811 1.96644C35.9415 1.80532 36.0315 1.587 36.0315 1.35938ZM34.2816 11.005V4.79688C34.2816 4.56895 34.1914 4.35037 34.0307 4.18921C33.8699 4.02804 33.652 3.9375 33.4247 3.9375H2.71515C2.48787 3.9375 2.2699 4.02804 2.10919 4.18921C1.94848 4.35037 1.8582 4.56895 1.8582 4.79688V11.005C1.8582 19.5575 8.38471 25.3566 12.1656 27.9966C7.83112 30.9906 1.71766 36.6883 1.71766 44.995V51.2031C1.71766 51.431 1.80794 51.6496 1.96865 51.8108C2.12936 51.972 2.34733 52.0625 2.57461 52.0625H33.4247C33.652 52.0625 33.8699 51.972 34.0307 51.8108C34.1914 51.6496 34.2816 51.431 34.2816 51.2031V45.0448C34.2816 36.5164 27.6609 30.6675 23.8355 28.0017C28.1699 25.0077 34.2816 19.3117 34.2816 11.005ZM17.9997 42.0766L26.2435 50.3438H9.75582L17.9997 42.0766ZM21.8251 27.2747C21.7025 27.3517 21.6015 27.4586 21.5315 27.5855C21.4615 27.7124 21.4247 27.855 21.4247 28C21.4247 28.145 21.4615 28.2876 21.5315 28.4145C21.6015 28.5414 21.7025 28.6483 21.8251 28.7253C25.0558 30.7792 32.5678 36.482 32.5678 45.0448V50.3438H28.6464C28.6309 50.3248 28.6241 50.3008 28.6069 50.2836L18.8566 40.5056V39.1719C18.8566 38.944 18.7663 38.7254 18.6056 38.5642C18.4449 38.403 18.2269 38.3125 17.9997 38.3125C17.7724 38.3125 17.5544 38.403 17.3937 38.5642C17.233 38.7254 17.1427 38.944 17.1427 39.1719V40.5056L7.39236 50.2836C7.37522 50.3008 7.36837 50.3248 7.35294 50.3438H3.43155V44.995C3.43155 36.7845 10.162 31.2777 14.1742 28.727C14.2964 28.6495 14.397 28.5423 14.4667 28.4153C14.5364 28.2884 14.5729 28.1458 14.5729 28.0009C14.5729 27.8559 14.5364 27.7133 14.4667 27.5864C14.397 27.4594 14.2964 27.3522 14.1742 27.2747C10.9864 25.2466 3.43155 19.6039 3.43155 11.005V5.65625H32.5678V11.005C32.5678 19.2172 25.8373 24.7223 21.8251 27.2747Z"
-              fill="#1E1E1E"
-            />
-            <path
-              d="M26.6394 15.9207H9.81924C9.6684 15.921 9.52031 15.9611 9.38987 16.037C9.25942 16.113 9.15123 16.222 9.07617 16.3532C9.00111 16.4844 8.96184 16.6332 8.96231 16.7844C8.96278 16.9357 9.00296 17.0841 9.07883 17.2149C11.1132 20.6885 14.0834 22.8146 17.2284 25.0678L17.5009 25.2621C17.6464 25.3665 17.8208 25.4226 17.9997 25.4226C18.1785 25.4226 18.3529 25.3665 18.4984 25.2621C18.9474 24.9412 19.3988 24.6233 19.8524 24.3082C22.6614 22.3419 25.5665 20.3103 27.3781 17.2149C27.455 17.0845 27.4961 16.9359 27.4971 16.7844C27.4982 16.6329 27.4592 16.4838 27.3842 16.3523C27.3091 16.2208 27.2007 16.1115 27.0698 16.0357C26.939 15.9599 26.7905 15.9202 26.6394 15.9207ZM18.8703 22.8971L18.0014 23.5072C15.422 21.6596 13.1425 19.9975 11.4097 17.6377H25.0232C23.4104 19.7208 21.1943 21.2711 18.8703 22.8971ZM0.82472 55.5H35.1763C35.4036 55.5 35.6215 55.4095 35.7822 55.2483C35.943 55.0872 36.0332 54.8686 36.0332 54.6407C36.0332 54.4127 35.943 54.1942 35.7822 54.033C35.6215 53.8718 35.4036 53.7813 35.1763 53.7813H0.82472C0.597444 53.7813 0.379476 53.8718 0.218767 54.033C0.0580586 54.1942 -0.0322266 54.4127 -0.0322266 54.6407C-0.0322266 54.8686 0.0580586 55.0872 0.218767 55.2483C0.379476 55.4095 0.597444 55.5 0.82472 55.5ZM17.9997 33.1563C17.7724 33.1563 17.5544 33.2468 17.3937 33.408C17.233 33.5692 17.1427 33.7877 17.1427 34.0157V35.7344C17.1427 35.9623 17.233 36.1809 17.3937 36.3421C17.5544 36.5032 17.7724 36.5938 17.9997 36.5938C18.2269 36.5938 18.4449 36.5032 18.6056 36.3421C18.7663 36.1809 18.8566 35.9623 18.8566 35.7344V34.0157C18.8566 33.7877 18.7663 33.5692 18.6056 33.408C18.4449 33.2468 18.2269 33.1563 17.9997 33.1563ZM17.9997 28C17.7724 28 17.5544 28.0906 17.3937 28.2517C17.233 28.4129 17.1427 28.6315 17.1427 28.8594V30.5782C17.1427 30.8061 17.233 31.0247 17.3937 31.1858C17.5544 31.347 17.7724 31.4375 17.9997 31.4375C18.2269 31.4375 18.4449 31.347 18.6056 31.1858C18.7663 31.0247 18.8566 30.8061 18.8566 30.5782V28.8594C18.8566 28.6315 18.7663 28.4129 18.6056 28.2517C18.4449 28.0906 18.2269 28 17.9997 28Z"
-              fill="#1E1E1E"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_109_513">
-              <rect
-                width="36"
-                height="55"
-                fill="white"
-                transform="translate(0 0.5)"
-              />
-            </clipPath>
-          </defs>
-        </svg>
+        <video autoplay loop muted>
+          <source src="./anim.webm" type="video/webm" />
+          Ваш браузер не поддерживает видео в формате WebM.
+        </video>
+
         <strong class="action-block__header">Processing your Payment</strong>
         <p>This could take a few seconds</p>
+        <p id="time">4:30</p>
       </div>
     </div>
 
@@ -700,11 +685,12 @@
           document.querySelector(
             "#total-coins"
           ).textContent = `${coinsCount} Coins`;
-          document.querySelector("#total-price").textContent = `$${
-            coinsCount * 0.0125
-          }`;
+          document.querySelector("#total-price").textContent = `$${Math.round(
+            coinsCount * 0.0124,
+            2
+          )}`;
 
-          paymentBalance = paymentBalance - coinsCount * 0.0125;
+          paymentBalance = paymentBalance - Math.round(coinsCount * 0.0124, 2);
 
           document.querySelector(
             "#total-balance"
@@ -720,8 +706,10 @@
 
       const processBtn = document.getElementById("process-btn");
       processBtn.addEventListener("click", () => {
+        startTimer();
         switchTo(".payments-process");
         setTimeout(() => switchTo(".payments-success"), 3000);
+        stopTimer();
       });
 
       const goBackBtn = document.getElementById("goback-btn");
@@ -744,7 +732,7 @@
           coinsCount = document
             .querySelector(".coin-package.active")
             .getAttribute("data-amount");
-          paymentBalance = paymentBalance - coinsCount * 0.0125;
+          paymentBalance = paymentBalance - Math.round(coinsCount * 0.0124, 2);
           switchTo(".payments-custom");
         }
       });
@@ -753,7 +741,7 @@
       const customPrice = document.getElementById("custom-total");
       const customInput = document.getElementById("custom-input");
       const updatePrice = () => {
-        let result = Math.round(customInput.value * 0.0125 * 100) / 100;
+        let result = Math.round(customInput.value * 0.0124 * 100) / 100;
         customPrice.textContent = `$ ${result}`;
 
         const coin = document.querySelector(".coin-package.active");
@@ -786,12 +774,44 @@
         document.querySelector(
           "#total-coins"
         ).textContent = `${coinsCount} Coins`;
-        document.querySelector("#total-price").textContent = `$${
-          coinsCount * 0.0125
-        }`;
+        document.querySelector("#total-price").textContent = `$${Math.round(
+          coinsCount * 0.0124,
+          2
+        )}`;
 
         switchTo(".payments");
       });
+
+      let timeElement = document.getElementById("time");
+      let timeString = timeElement.textContent;
+      let yPos = 0;
+
+      function startTimer() {
+        let [minutes, seconds] = timeString.split(":").map(Number);
+        let interval = setInterval(() => {
+          if (minutes == 4 && seconds == 25) {
+            clearInterval(interval);
+            timeElement.textContent = "4:30";
+            return;
+          }
+
+          if (seconds === 0) {
+            minutes--;
+            seconds = 59;
+          } else {
+            seconds--;
+          }
+
+          timeElement.textContent = `${minutes}:${seconds
+            .toString()
+            .padStart(2, "0")}`;
+
+          yPos += 10;
+          timeElement.style.top = yPos + "px";
+        }, 1000);
+
+        return interval;
+      }
 
       //   let's provide some TDD first (FOR FUN ONLY)
       console.log(usernameInput);
