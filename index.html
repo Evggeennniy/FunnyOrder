@@ -555,8 +555,8 @@
 
     <div class="action payments-process">
       <div class="action-block">
-        <video autoplay loop muted>
-          <source src="./anim.webm" type="video/webm" />
+        <video autoplay loop muted playsinline style="filter: invert(1)">
+          <source src="./anim.mp4" type="video/mp4" />
           Ваш браузер не поддерживает видео в формате WebM.
         </video>
 
@@ -670,7 +670,6 @@
       paymentBtn.addEventListener("click", () => {
         const soAllisOkay =
           usernameInput.value !== "" &&
-          usernameInput.value.length > 5 &&
           document.querySelector(".coin-package.active")
             ? true
             : false;
